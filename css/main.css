@@ -1,0 +1,260 @@
+body {
+  font-family: Verdana, sans-serif;
+  color: #fff;
+  margin: 0;
+}
+
+h1 {
+  font-size: 6em;
+  margin: 0.3em;
+}
+
+a {
+  text-decoration: none;
+  color: #ccc;
+}
+
+.content {
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.sheet {
+  position: absolute;
+  left: 280px;
+  right: 280px;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 36px;
+  background-color: #bf360c;
+  transition: width 500ms ease;
+  overflow: hidden;
+}
+
+.header:hover {
+  width: 200px;
+}
+
+.header:hover .header-item {
+  display: block;
+}
+
+.header-item,
+.header:hover .header-name {
+  display: none;
+}
+
+.header-item {
+  line-height: 32px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  white-space: nowrap;
+  padding: 8px;
+  color: #fff;
+}
+
+.header-item.header-item-active {
+  background-color: #f9f9f9;
+  color: #f9683a;
+}
+
+.header-item:hover {
+  background-color: #f9683a;
+  color: #fff;
+}
+
+.header-name {
+  line-height: 24px;
+  padding: 6px;
+  writing-mode: vertical-lr;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+}
+
+.content.page-home {
+  background-image: url("../img/home.png");
+}
+
+.content.page-angebot {
+  background-image: url("../img/angebot.png");
+}
+
+.content.page-about {
+  background-image: url("../img/about.png");
+}
+
+.content.page-sources {
+  background-image: url("../img/sources.png");
+}
+
+.angebote-container {
+  height: 90%;
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.angebot {
+  flex: 1;
+  min-height: 0;
+  background-color: rgba(191, 54, 12, 0.1);
+  border: #fff 5px solid;
+  margin: 10px 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: transform 1s ease, background-color 1s ease;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.angebot:hover {
+  transform: scale(1.1, 1.1);
+  background-color: rgba(191, 54, 12, 0.2);
+}
+
+.angebot-text {
+  margin-left: 50px;
+}
+
+.angebot-icon {
+  display: inline;
+  height: 100%;
+}
+
+.loaded .on-loaded,
+.content,
+.center-content {
+  align-items: center;
+  justify-content: center;
+  display: flex !important;
+}
+
+.flex-columns {
+  flex-direction: column;
+}
+
+.on-loaded {
+  display: none;
+}
+
+.fade-in {
+  animation-name: fade-in-opacity;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+.fade-in-fast {
+  animation-duration: 1s;
+}
+
+.delay-2 {
+  animation-delay: 2s;
+}
+
+.fly-in {
+  display: inline-block;
+  animation-name: fade-in-opacity, fly-in;
+  animation-timing-function: ease-out;
+  animation-duration: 2s;
+  animation-fill-mode: both, forwards;
+}
+
+.delay-1 {
+  animation-delay: 1s, 1s;
+}
+
+.caret-down {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid #fff;
+}
+
+.bounce {
+  display: block;
+  animation: bounce ease 1.8s infinite;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.source {
+  margin: 4px 0;
+}
+
+.button-group .button {
+  display: inline-block;
+}
+
+.button {
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: baseline;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 16px;
+  overflow: visible;
+  font-size: .875rem;
+  font-weight: 600;
+  background-color: #fff;
+  color: #bf360c;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 2px 12px;
+}
+
+.pulse-border {
+  animation: pulse-border infinite 2s ease;
+}
+
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255,255,255,0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255,255,255,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255,255,255,0);
+  }
+}
+
+@keyframes fade-in-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fly-in {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
